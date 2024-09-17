@@ -1,6 +1,6 @@
 #!/bin/bash
 # Add Docker's official GPG key:
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
@@ -24,3 +24,8 @@ sudo usermod -aG docker $USER
 
 # Activate the changes to group
 newgrp docker
+
+# Install docker compose
+sudo apt update -y
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
